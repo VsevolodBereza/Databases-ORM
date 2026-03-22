@@ -10,8 +10,7 @@ build/
 logs/
 
 # environment variables
-.env
-.env.*
+.env.example
 
 # OS files
 .DS_Store
