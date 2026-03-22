@@ -21,6 +21,7 @@ def get_birdspotting_repository(
 async def get_birdspottings(
     repo: Annotated[BirdspottingRepository, Depends(get_birdspotting_repository)]
 ):
+    """Get all bird observations."""
     return repo.get_all()
 
 
@@ -29,6 +30,7 @@ async def get_birdspotting(
     id: int,
     repo: Annotated[BirdspottingRepository, Depends(get_birdspotting_repository)]
 ):
+    """Get one bird observation."""
     return repo.get_one(id)
 
 
@@ -37,4 +39,5 @@ async def add_birdspotting(
     birdspotting: BirdspottingCreate,
     repo: Annotated[BirdspottingRepository, Depends(get_birdspotting_repository)]
 ):
+    """Create a bird observation."""
     return repo.insert(birdspotting)
